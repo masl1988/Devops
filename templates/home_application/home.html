@@ -1,19 +1,188 @@
-<%inherit file="/base.html"/>
+<!DOCTYPE html>
+<html>
 
-<%block name="content">
-	<div>
-		<!-- 蓝鲸智云开发框架说明  Start -->
-		<div>
-			<h3>蓝鲸智云开发框架<small>助力你的自动化</small></h3>
-		</div>
-		<hr>
-		<div class="mt30">
-			<p>您现在打开的应用是由蓝鲸智云示例代码生成的，该示例代码称为“APP开发框架”。</p>
-			<p>蓝鲸智云集成平台（PaaS）提供了完善的前后台开发框架、调度引擎、公共组件等模块，帮助业务的产品和技术人员快速构建低成本、免运维的支撑工具和运营系统。</p>
-			<p>若想体验快速开发应用的功能，请前往<a href="${BK_PAAS_HOST}" target="_blank">“开发者中心”</a>。</p>
-		</div>
-		<!-- 蓝鲸智云开发框架说明  End -->
-	</div>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- 若您需要使用Kendo UI Professional，请联系版权人获得合法的授权或许可。 -->
+    <!-- Bootstrap css -->
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <!-- kendo ui css -->
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.common.min.css" rel="stylesheet">
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.default.min.css" rel="stylesheet">
+    <!-- font-awesome -->
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/fontawesome/css/font-awesome.css" rel="stylesheet">
+    <!--蓝鲸提供的公用样式库 -->
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/bk/css/bk.css?v=1.0.1" rel="stylesheet">
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/bk/css/bk_pack.css" rel="stylesheet">
+    <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
+    <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <!-- 包括所有kendoui的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/kendoui-2015.2.624/js/kendo.all.min.js"></script>
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/bk/js/bk.js"></script>
+    <!-- 数据埋点统计 -->
+    <script src="https://magicbox.bkclouds.cc/static_api/analysis.js"></script>
+    <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+    <!--[if lt IE 9]><script src="https://magicbox.bkclouds.cc/static_api/v3/assets/js/html5shiv.min.js"></script><script src="https://magicbox.bkclouds.cc/static_api/v3/assets/js/respond.min.js"></script><![endif]-->
+</head>
 
-</%block>
+<body class="bg-white" data-bg-color="bg-white">
+    <div class="king-page-box">
+        <div class="king-layout1-header">
+            <nav>
+                <div style="width:100%;height:50px;" class="king-header king-header4 ">
+                    <div class="king-header-inner">
+                        <div class="king-header-brand">
+                            <a href="javascript:;">
+                                <img src="https://magicbox.bkclouds.cc/static_api/v3/components/horizontal_nav8/images/logo.png" height="30">
+                            </a>
+                        </div>
+                        <div class="king-header-list list2">
+                            <ul>
+                                <li> <a href="javascript:;"><i class="glyphicon glyphicon-shopping-cart"></i></a> </li>
+                                <li> <a href="javascript:;"><i class="glyphicon glyphicon-search"></i></a> </li>
+                            </ul>
+                        </div>
+                        <div class="king-header-list list1">
+                            <ul>
+                                <li class="active">
+                                    <a href="javascript:void(0);" class="f14">
+                                        <span>首页</span>
+                                    </a>
+                                    <ul class="king-submenu"> </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="f14">
+                                        <span>云产品</span>
+                                    </a>
+                                    <ul class="king-submenu">
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <span>计算机与网络</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <span>数据与储存</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <span>监控与安全</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <span>部署与管理</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <span>处理数据与分析</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="f14">
+                                        <span>解决方案</span>
+                                    </a>
+                                    <ul class="king-submenu">
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <span>游戏与视频</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <span>移动应用</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <span>建站</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <span>金融</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <span>智能硬件</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="f14">
+                                        <span>合作伙伴</span>
+                                    </a>
+                                    <ul class="king-submenu">
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <span>计算机与网络</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="king-layout2-main mt15" style="width:960px;">
+            <form class="form-horizontal">
+                <div class="form-group clearfix ">
+                    <label class="col-sm-3 control-label bk-lh30 pt0">参数1：</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control bk-valign-top" id="param1" placeholder="提示信息"> </div>
+                </div>
+                <div class="form-group clearfix ">
+                    <label class="col-sm-3 control-label bk-lh30 pt0">参数2：</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control bk-valign-top" id="param2" placeholder="提示信息"> </div>
+                </div>
+                <div class="form-group clearfix">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <button type="button" class="king-btn mr10  king-success" id="submit">提交</button>
+                        <button type="button" class="king-btn king-default ">取消</button>
+                    </div>
+                </div>
+                <div class="king-widget1  m0">
+                    <div class="king-widget2-content p25">
+                        <div class="king-counter king-counter-lg">
+                            <span class="king-counter-number" id="result"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 设置面板Start -->
+                <!-- 设置面板End -->
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $("#submit").on('click', function(){
+            var param1 = $("#param1").val();
+            var param2 = $("#param2").val();
+            console.log(param1 + param2);
+            var url = '${SITE_URL}excute/';
 
+            $.get(url, {'param1': param1, 'param2':param2}, function(data){
+                var param = data.param
+                console.log(param);
+                $('#result').text(param)
+            }, 'json');
+
+
+        })
+    </script>
+</body>
+
+</html>
