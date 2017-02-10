@@ -59,6 +59,17 @@ def tasks_job(request):
     job_ins_id = job.get('data').get('taskInstanceId')
     return render_json({'job_ins_id': job_ins_id})
 
+def create_job_db(request):
+    """
+    获取前端index.html传递的输入变量并写入数据库中
+    """
+    select1 = request.GET.get('select1')
+    select2 = request.GET.get('select2')
+    job_result = int(input1) '+' int(input2)
+
+    sum.objects.create(sum1=select1, sum2=select2, summ=job_result)
+    return render_json({'job_result': job_result})
+
 
 def tasks_test(request):
     ip_list = ['192.168.1.1', '192.168.1.2', '192.168.1.3']
