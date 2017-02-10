@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- 若您需要使用Kendo UI Professional，请联系版权人获得合法的授权或许可。 -->
+    <!-- Bootstrap css -->
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <!-- kendo ui css -->
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.common.min.css" rel="stylesheet">
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.default.min.css" rel="stylesheet">
+    <!-- font-awesome -->
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/fontawesome/css/font-awesome.css" rel="stylesheet">
+    <!--蓝鲸提供的公用样式库 -->
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/bk/css/bk.css?v=1.0.1" rel="stylesheet">
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/bk/css/bk_pack.css" rel="stylesheet">
+    <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
+    <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <!-- 包括所有kendoui的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/kendoui-2015.2.624/js/kendo.all.min.js"></script>
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/bk/js/bk.js"></script>
+    <!-- 数据埋点统计 -->
+    <script src="https://magicbox.bkclouds.cc/static_api/analysis.js"></script>
+    <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+    <!--[if lt IE 9]><script src="https://magicbox.bkclouds.cc/static_api/v3/assets/js/html5shiv.min.js"></script><script src="https://magicbox.bkclouds.cc/static_api/v3/assets/js/respond.min.js"></script><![endif]-->
+</head>
+
+<body class="bg-white" data-bg-color="bg-white">
+    <div class="king-page-box">
+        <div class="king-layout1-header">
+            <nav class="">
+                <div style="overflow:hidden; z-index: inherit;" class="navbar king-horizontal-nav1  f14">
+                    <div class="navbar-container">
+                        <div class="navbar-header pull-left">
+                            <a class="navbar-brand" href="javascript:;">
+                                <img src="https://magicbox.bkclouds.cc/static_api/v3/bk/images/logo.png" class="logo"> </a>
+                        </div>
+                        <ul class="nav navbar-nav pull-left m0">
+                            <li class="active"><a href="javascript:void(0);">首页</a></li>
+                            <li><a href="javascript:void(0);">关于我们</a></li>
+                            <li><a href="javascript:void(0);">联系我们</a></li>
+                        </ul>
+                        <div class="navbar-header pull-right">
+                            <ul class="nav">
+                                <li class="user-info">
+                                    <a href="javascript:;">
+                                        <img class="img-rounded" src="https://magicbox.bkclouds.cc/static_api/v3/components/horizontal_nav1/images/avatar.png">
+                                        <span>admin</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="king-layout2-main mt15" style="width:960px;">
+            <form class="form-horizontal">
+                <div class="container-fluid mb0 ">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group clearfix ">
+                                <label class="col-sm-3 control-label bk-lh30 pt0">参数：</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control bk-valign-top" id="sum" placeholder="提示参数"> </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group clearfix">
+                                <div class="col-sm-9 col-sm-offset-3">
+                                    <button type="button" class="king-btn mr10  king-success" id="submit">提交</button>
+                                    <button type="button" class="king-btn king-default ">取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <table class="table mb0 pr15 ranger-box ">
+                <thead>
+                    <tr>
+                        <th style="width: 100px;">#</th>
+                        <th style="width: 20%;">任务</th>
+                        <th style="width: 20%;">进度</th>
+                        <th style="width: 20%;">开发者</th>
+                        <th>结束时间</th>
+                    </tr>
+                </thead>
+                <tbody>
+                % for list in lists:
+                    <tr>
+                        <td style="width: 100px;   y">${list}</td>
+                        <td style="width: 20%;">${list.sum1}</td>
+                        <td style="width: 20%;">${list.sum2}</td>
+                        <td style="width: 20%;">${list.summ}</td>
+                        <td>2015-09-20</td>
+                    </tr>
+                % endfor
+                </tbody>
+            </table>
+            <!-- 设置面板Start -->
+            <template id="header_tpl_1486541077856">
+                <tr>
+                    <th style="width: 100px;">#index#</th>
+                    <th style="width: 20%;">#task#</th>
+                    <th style="width: 20%;">#progress#</th>
+                    <th style="width: 20%;">#host#</th>
+                    <th>#date#</th>
+                </tr>
+            </template>
+            <template id="tpl_1486541077856">
+                <tr>
+                    <td style="width: 100px;">#index#</td>
+                    <td style="width: 20%;">#columnName1#</td>
+                    <td style="width: 20%;">#columnName2#</td>
+                    <td style="width: 20%;">#columnName3#</td>
+                    <td>#columnName4#</td>
+                </tr>
+            </template>
+            <!-- 设置面板End -->
+        </div>
+    </div>
+    <script>
+        $(function(){
+                function renderTpl(str, cfg) {
+                    var re = /(#(.+?)#)/g;
+
+                    return str.replace(re, function() {
+                        var val = cfg[arguments[2]]+'';
+                        if(typeof val == 'undefined') {
+                            val = '';
+                        }
+                        return val;
+                    });
+                }
+
+                // 异步请求后台数据
+                $.ajax({
+                    url: 'https://magicbox.bkclouds.cc/static_api/v3/components/table6/data.json',
+                    type: 'GET',
+                    success: function(res){
+                        var _html = ' ';
+                        var list = res.items;
+                        var tpl = $('#tpl_1486541077856').html();
+                        var headerTpl =  $('#header_tpl_1486541077856').html();
+                        for (var i=0,len=list.length; i < len; i++){
+                            var item = list[i];
+                            _html += renderTpl(tpl, item)
+                        }
+                        $('#code_1486541077856 tbody').html(_html);
+                        $('.ranger-box thead').html(renderTpl(headerTpl,res.catalogues));
+                    }
+                });
+            });
+    </script>
+    <script type="text/javascript">
+        $("#submit").on('click', function(){
+            var sum = $("#sum").val();
+            console.log(sum,sum);
+            var url = '${SITE_URL}home2/?sum='+sum;
+            console.log(url);
+            window.location.href = url;
+        })
+    </script>
+</body>
+
+</html>

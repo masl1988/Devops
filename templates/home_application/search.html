@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- 若您需要使用Kendo UI Professional，请联系版权人获得合法的授权或许可。 -->
+    <!-- Bootstrap css -->
+    <link href="https://o.qcloud.com/static_api/v3/assets/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <!-- kendo ui css -->
+    <link href="https://o.qcloud.com/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.common.min.css" rel="stylesheet">
+    <link href="https://o.qcloud.com/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.default.min.css" rel="stylesheet">
+    <!-- font-awesome -->
+    <link href="https://o.qcloud.com/static_api/v3/assets/fontawesome/css/font-awesome.css" rel="stylesheet">
+    <!--蓝鲸提供的公用样式库 -->
+    <link href="https://o.qcloud.com/static_api/v3/bk/css/bk.css?v=1.0.1" rel="stylesheet">
+    <link href="https://o.qcloud.com/static_api/v3/bk/css/bk_pack.css" rel="stylesheet">
+    <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+    <script src="https://o.qcloud.com/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
+    <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="https://o.qcloud.com/static_api/v3/assets/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <!-- 包括所有kendoui的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="https://o.qcloud.com/static_api/v3/assets/kendoui-2015.2.624/js/kendo.all.min.js"></script>
+    <script src="https://o.qcloud.com/static_api/v3/bk/js/bk.js"></script>
+    <!-- 数据埋点统计 -->
+    <script src="https://o.qcloud.com/static_api/analysis.js"></script>
+    <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+    <!--[if lt IE 9]><script src="https://o.qcloud.com/static_api/v3/assets/js/html5shiv.min.js"></script><script src="https://o.qcloud.com/static_api/v3/assets/js/respond.min.js"></script><![endif]-->
+</head>
+
+<body class="bg-white" data-bg-color="bg-white">
+    <div class="king-page-box">
+        <div class="king-layout1-header">
+            <nav role="navigation" class="navbar navbar-default king-horizontal-nav2    f14 ">
+                <div class="container " style="width:100%;overflow:hidden;">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed navbar-toggle-sm" data-toggle="collapse" data-target="#king-horizontal-nav2-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="javascript:;">
+                            <img src="https://o.qcloud.com/static_api/v3/bk/images/logo3.png" alt="" class="logo"> </a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-responsive-collapse" id="king-horizontal-nav2-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="http://dev.bking.com:8000">乘法运算</a></li>
+                            <li><a href="http://dev.bking.com:8000/tasks">作业平台</a><li>
+                            <li class="king-navbar-active"><a href="javascript:void(0);">搜索查询</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="javascript:;">
+                                    <span>马世龙</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="king-layout2-main mt15" style="width:960px;">
+            <form class="form-vertical p15">
+                <div class="form-group ">
+                    <label>请输入搜索条件：</label>
+                    <input type="text" class="form-control" id="" placeholder="请输入搜索条件"> </div>
+                <div class="form-group ">
+                    <label>请输入搜索条件：</label>
+                    <input type="text" class="form-control" id="" placeholder="请输入搜索条件"> </div>
+                <div class="form-group">
+                    <button type="button" class="king-btn mr10  king-info">搜索</button>
+                    <button type="button" class="king-btn king-default ">取消</button>
+                </div>
+                <table class="table mb0 pr15 ranger-box table-striped table-bordered table-header-bg  ">
+                    <thead>
+                        <tr>
+                            <th style="width: 100px;">#</th>
+                            <th style="width: 20%;">任务</th>
+                            <th style="width: 20%;">进度</th>
+                            <th style="width: 20%;">开发者</th>
+                            <th>结束时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="width: 100px;">1</td>
+                            <td style="width: 20%;">版本更新</td>
+                            <td style="width: 20%;">完成</td>
+                            <td style="width: 20%;">管理员</td>
+                            <td>2015-09-20</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 100px;">2</td>
+                            <td style="width: 20%;">数据备份</td>
+                            <td style="width: 20%;">完成</td>
+                            <td style="width: 20%;">管理员</td>
+                            <td>2015-09-20</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 100px;">3</td>
+                            <td style="width: 20%;">定时任务</td>
+                            <td style="width: 20%;">完成</td>
+                            <td style="width: 20%;">管理员</td>
+                            <td>2015-09-20</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 100px;">4</td>
+                            <td style="width: 20%;">修复bug</td>
+                            <td style="width: 20%;">完成</td>
+                            <td style="width: 20%;">管理员</td>
+                            <td>2015-09-20</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- 设置面板Start -->
+                <template id="header_tpl_1486676009292">
+                    <tr>
+                        <th style="width: 100px;">#index#</th>
+                        <th style="width: 20%;">#task#</th>
+                        <th style="width: 20%;">#progress#</th>
+                        <th style="width: 20%;">#host#</th>
+                        <th>#date#</th>
+                    </tr>
+                </template>
+                <template id="tpl_1486676009292">
+                    <tr>
+                        <td style="width: 100px;">#index#</td>
+                        <td style="width: 20%;">#columnName1#</td>
+                        <td style="width: 20%;">#columnName2#</td>
+                        <td style="width: 20%;">#columnName3#</td>
+                        <td>#columnName4#</td>
+                    </tr>
+                </template>
+                <!-- 设置面板End -->
+            </form>
+        </div>
+    </div>
+    <script>
+        $(function(){
+                function renderTpl(str, cfg) {
+                    var re = /(#(.+?)#)/g;
+
+                    return str.replace(re, function() {
+                        var val = cfg[arguments[2]]+'';
+                        if(typeof val == 'undefined') {
+                            val = '';
+                        }
+                        return val;
+                    });
+                }
+
+                // 异步请求后台数据
+                $.ajax({
+                    url: 'https://o.qcloud.com/static_api/v3/components/table6/data.json',
+                    type: 'GET',
+                    success: function(res){
+                        var _html = ' ';
+                        var list = res.items;
+                        var tpl = $('#tpl_1486676009292').html();
+                        var headerTpl =  $('#header_tpl_1486676009292').html();
+                        for (var i=0,len=list.length; i < len; i++){
+                            var item = list[i];
+                            _html += renderTpl(tpl, item)
+                        }
+                        $('#code_1486676009292 tbody').html(_html);
+                        $('.ranger-box thead').html(renderTpl(headerTpl,res.catalogues));
+                    }
+                });
+            });
+    </script>
+</body>
+
+</html>

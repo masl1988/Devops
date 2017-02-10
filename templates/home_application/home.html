@@ -142,12 +142,21 @@
                 <div class="form-group clearfix ">
                     <label class="col-sm-3 control-label bk-lh30 pt0">参数1：</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control bk-valign-top" id="param1" placeholder="提示信息"> </div>
+                        <select type="text" class="form-control bk-valign-top" id="param1" placeholder="提示信息">
+                            % for ip in ip_list:
+                                <option>${ip}</option>
+                            % endfor
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group clearfix ">
                     <label class="col-sm-3 control-label bk-lh30 pt0">参数2：</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control bk-valign-top" id="param2" placeholder="提示信息"> </div>
+                        <select type="text" class="form-control bk-valign-top" id="param2" placeholder="提示信息"> </div>
+                        % for job in job_list:
+                            <option value=${job['id']}>${job['name']}</option>
+                        % endfor
+                        </select>
                 </div>
                 <div class="form-group clearfix">
                     <div class="col-sm-9 col-sm-offset-3">
@@ -172,11 +181,11 @@
             var param1 = $("#param1").val();
             var param2 = $("#param2").val();
             console.log(param1 + param2);
-            var url = '${SITE_URL}excute/';
+            var url = '${SITE_URL}excute_task/';
 
-            $.get(url, {'param1': param1, 'param2':param2}, function(data){
-                var param = data.param
-                console.log(param);
+            $.get(url, {'ip': param1, 'job_id':param2}, function(data){
+                var param = data.job_ins_id
+                console.log(param)
                 $('#result').text(param)
             }, 'json');
 

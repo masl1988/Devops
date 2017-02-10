@@ -36,3 +36,5 @@ class CollectionsJOB(object):
             client=self.client, method='GET', path='/api/c/compapi/job/get_task_result/',
             description=u'根据作业实例 ID 查询作业执行状态',
         )
+        self.get_task = ComponentAPI(client=self.client, method='GET', path='/api/c/compapi/job/get_task/',
+            description=u'根据作业实例 ID 查询作业执行状态', )

@@ -1,39 +1,74 @@
 # -*- coding: utf-8 -*-
 
 from common.mymako import render_mako_context,render_json
-from django.http import HttpResponse
 from home_application.models import sum
+from django.http import HttpResponse
+#from home_application import models
+from blueking.component.shortcuts import get_client_by_request
 
 
-
-def home(request):
+def index(request):
     """
-    首页
+    乘法运算
     """
-    return render_mako_context(request, '/home_application/home.html')
+    return render_mako_context(request, '/home_application/index.html')
 
-
-def dev_guide(request):
+def create_db(request):
     """
-    开发指引
+    获取前端index.html传递的输入变量并写入数据库中
     """
-    return render_mako_context(request, '/home_application/dev_guide.html')
+    input1 = request.GET.get('input1')
+    input2 = request.GET.get('input2')
+    input_sum = int(input1) * int(input2)
 
+    sum.objects.create(sum1=input1, sum2=input2, summ=input_sum)
+    return render_json({'input_sum': input_sum})
 
-def contactus(request):
+def tasks(request):
     """
-    联系我们
+    作业平台
     """
-    return render_mako_context(request, '/home_application/contact.html')
+    client = get_client_by_request(request)
+#指定paas平台的业务app_id的数值
+    app_id = {'app_id': 3}
 
-def excute(request):
-    param1 = request.GET.get('param1')
-    param2 = request.GET.get('param2')
-    param = param1 + param2
+#指定result 获取app_id为3的主机列表
+    result = client.cc.get_app_host_list(app_id)
 
-    sum.objects.create(sum1=param1, sum2=param2, summ=param)
-    return render_json({'param': param})
+# 使用python处理获取到的数据
+    _ip_list = result.get('data', []) if result.get('result', False) else []
+    ip_list = [_ip['InnerIP'] for _ip in _ip_list]
 
-#return HttpResponse(u'param1:%s, param2:%s' % (param1, param2))
+    job_resutl = client.job.get_task(app_id)
+    job_list = [{'id': str(i['id']), 'name': i['name']} for i in job_resutl.get('data', [])]
 
-#return HttpResponse('func show id:%s, param:%s, user:%s' % (id, param, username))
+# 定义字典并传递数值到前端
+    countext = {'ip_list': ip_list, 'job_list': job_list}
+    return render_mako_context(request, '/home_application/tasks.html',countext)
+
+
+def tasks_job(request):
+
+    select1 = request.GET.get('select1')
+    select2 = request.GET.get('select2')
+
+    kwargs = {'app_id': 3,'ipList': select1 , 'task_id': select2}
+    client = get_client_by_request(request)
+    job = client.job.execute_task(kwargs)
+
+    job_ins_id = job.get('data').get('taskInstanceId')
+    return render_json({'job_ins_id': job_ins_id})
+
+
+def tasks_test(request):
+    ip_list = ['192.168.1.1', '192.168.1.2', '192.168.1.3']
+    job_list = [{'id':1, 'name':u"作业1"},{'id':2, 'name':u"作业二"}]
+    countext = {'ip_list': ip_list, 'job_list': job_list}
+    return render_mako_context(request, '/home_application/tasks.html', countext)
+
+
+def search(request):
+    """
+    查询搜索
+    """
+    return render_mako_context(request, '/home_application/search.html')
