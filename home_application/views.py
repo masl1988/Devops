@@ -87,7 +87,7 @@ def tasks_job(request):
     #job_list = sum.objects.all()
     #print job_list
     #print job_message
-    return render_json({'job_message': job_message})
+    return render_json({'job_log_ip': job_log_ip, 'job_log_Text': job_log_Text})
 
 
 def tasks_test(request):

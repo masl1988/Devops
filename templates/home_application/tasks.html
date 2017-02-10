@@ -93,8 +93,16 @@
             <div class="king-widget1  m0">
                 <div class="king-widget2-content p25">
                     <div class="king-counter king-counter-lg">
+                        <span class="king-counter-number"id="host_ip">主机IP</span>
+                        <div class="king-counter-label text-uppercase">主机IP</div>
+                    </div>
+                </div>
+            </div>
+            <div class="king-widget1  m0">
+                <div class="king-widget2-content p25">
+                    <div class="king-counter king-counter-lg">
                         <span class="king-counter-number"id="result">执行结果</span>
-                        <div class="king-counter-label text-uppercase">counters</div>
+                        <div class="king-counter-label text-uppercase">执行结果</div>
                     </div>
                 </div>
             </div>
@@ -109,9 +117,12 @@
             console.log(select1 , select1);
             var url = '${SITE_URL}tasks_job/';
             $.get(url, {'select1': select1, 'select2':select2}, function(data){
-                var param = data.job_message;
-                console.log(param);
-                $('#result').text(param)
+                var param1 = data.job_log_ip;
+                var param2 = data.job_log_Text;
+                console.log(param1);
+                console.log(param2);
+                $('#host_ip').text(param1)
+                $('#result').text(param2)
             }, 'json');
         })
     </script>
