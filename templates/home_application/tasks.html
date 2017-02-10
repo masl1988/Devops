@@ -109,7 +109,7 @@
             console.log(select1 , select1);
             var url = '${SITE_URL}tasks_job/';
             $.get(url, {'select1': select1, 'select2':select2}, function(data){
-                var param = data.job_status;
+                var param = data.job_message;
                 console.log(param);
                 $('#result').text(param)
             }, 'json');
