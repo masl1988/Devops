@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import time
 
 from common.mymako import render_mako_context,render_json
 from home_application.models import sum
@@ -52,23 +53,29 @@ def tasks_job(request):
     select1 = request.GET.get('select1')
     select2 = request.GET.get('select2')
 
-    kwargs = {'app_id': 3,'ipList': select1 , 'task_id': select2}
     client = get_client_by_request(request)
+
+    kwargs = {'app_id': 3,'ipList': select1 , 'task_id': select2}
     job = client.job.execute_task(kwargs)
-
     job_ins_id = job.get('data').get('taskInstanceId')
-    return render_json({'job_ins_id': job_ins_id})
 
-def create_job_db(request):
-    """
-    获取前端index.html传递的输入变量并写入数据库中
-    """
     select1 = request.GET.get('select1')
     select2 = request.GET.get('select2')
     job_result = select1 + select2
-
     sum.objects.create(sum1=select1, sum2=select2, summ=job_result)
-    return render_json({'job_result': job_result})
+
+    #time.sleep(6)
+    kwargs1 = {'task_instance_id': job_ins_id}
+    print kwargs1
+    print '*'*40
+
+    job_ret = client.job.get_task_result(kwargs1)
+    print job_ret
+    job_status = job_ret['data']['taskInstance']['status']
+    print '*' * 40
+
+    print job_status
+    return render_json({'job_status': job_status})
 
 
 def tasks_test(request):
