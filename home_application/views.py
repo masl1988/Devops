@@ -101,4 +101,6 @@ def search(request):
     """
     查询搜索
     """
-    return render_mako_context(request, '/home_application/search.html')
+    lists = sum.objects.all()
+    countext = {'lists': lists}
+    return render_mako_context(request, '/home_application/search.html', countext)

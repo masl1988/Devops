@@ -85,34 +85,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td style="width: 100px;">1</td>
-                            <td style="width: 20%;">版本更新</td>
-                            <td style="width: 20%;">完成</td>
-                            <td style="width: 20%;">管理员</td>
-                            <td>2015-09-20</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 100px;">2</td>
-                            <td style="width: 20%;">数据备份</td>
-                            <td style="width: 20%;">完成</td>
-                            <td style="width: 20%;">管理员</td>
-                            <td>2015-09-20</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 100px;">3</td>
-                            <td style="width: 20%;">定时任务</td>
-                            <td style="width: 20%;">完成</td>
-                            <td style="width: 20%;">管理员</td>
-                            <td>2015-09-20</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 100px;">4</td>
-                            <td style="width: 20%;">修复bug</td>
-                            <td style="width: 20%;">完成</td>
-                            <td style="width: 20%;">管理员</td>
-                            <td>2015-09-20</td>
-                        </tr>
+                    % for list in lists:
+                    <tr>
+                        <td style="width: 100px;   y">${list}</td>
+                        <td style="width: 20%;">${list.sum1}</td>
+                        <td style="width: 20%;">${list.sum2}</td>
+                        <td style="width: 20%;">${list.summ}</td>
+                        <td>2015-09-20</td>
+                    </tr>
+                    % endfor
                     </tbody>
                 </table>
                 <!-- 设置面板Start -->
