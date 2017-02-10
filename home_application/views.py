@@ -65,7 +65,7 @@ def create_job_db(request):
     """
     select1 = request.GET.get('select1')
     select2 = request.GET.get('select2')
-    job_result = int(input1) '+' int(input2)
+    job_result = select1 + select2
 
     sum.objects.create(sum1=select1, sum2=select2, summ=job_result)
     return render_json({'job_result': job_result})

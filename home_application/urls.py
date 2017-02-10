@@ -13,4 +13,6 @@ urlpatterns = patterns('home_application.views',
     (r'^tasks/$', 'tasks'),
     (r'^search/$', 'search'),
     (r'^create_db', 'create_db'),
+    (r'^create_job_db', 'create_job_db'),
+
 )

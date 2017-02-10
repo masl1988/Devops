@@ -108,14 +108,24 @@
             var select2 = $("#select2").val();
             console.log(select1 , select1);
             var url = '${SITE_URL}tasks_job/';
-
             $.get(url, {'select1': select1, 'select2':select2}, function(data){
                 var param = data.job_ins_id
                 console.log(param)
-                $('#result').text(param)
+                <!-- $('#result').text(param) -->
             }, 'json');
-
-
+        })
+    </script>
+    <script type="text/javascript">
+        $("#run").on('click', function(){
+            var select1 = $("#select1").val();
+            var select2 = $("#select2").val();
+            console.log(select1 , select1);
+            var url2 = '${SITE_URL}create_job_db/';
+            $.get(url2, {'select1': select1, 'select2':select2}, function(data){
+                var job_result = data.job_result
+                console.log(job_result)
+                $('#result').text(job_result)
+            }, 'json');
         })
     </script>
 </body>
