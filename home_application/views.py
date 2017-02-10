@@ -61,14 +61,14 @@ def tasks_job(request):
 
 #time.sleep(6)
     kwargs1 = {'task_instance_id': job_ins_id}
-    print kwargs1
+    #print kwargs1
 
 # 通过 client.job.get_task_result的API获取
     job_result = client.job.get_task_result(kwargs1)
-    print job_result
+    #print job_result
 
     job_status = job_result['data']['taskInstance']['status']
-    print job_status
+    #print job_status
 #获取到的数据存储至数据库
     sum.objects.create(sum1=select1, sum2=select2, summ=job_status)
 
@@ -79,14 +79,14 @@ def tasks_job(request):
     job_log_Text = job_log_result['data'][0]['stepAnalyseResult'][0]['resultTypeText']
 
 
-    print '*'*100
-    print job_log_ip
-    print job_log_Text
+    #print '*'*100
+    #print job_log_ip
+    #print job_log_Text
 
     job_message = job_log_ip + job_log_Text
     #job_list = sum.objects.all()
     #print job_list
-    print job_message
+    #print job_message
     return render_json({'job_message': job_message})
 
 
